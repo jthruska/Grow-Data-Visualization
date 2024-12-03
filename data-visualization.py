@@ -48,9 +48,9 @@ def wordCloud(df, column, ignore):
 
 
 # Reading the questionnaire csv
-pre = pd.read_csv('Grow Pre-Test Questionnaire.csv')
-post = pd.read_csv('Grow Post-Test Questionnaire.csv')
-test = pd.read_csv('Task Times.csv')
+pre = pd.read_csv("C:\\Users\jthru\Documents\Semester 5\Advanced Web Development\data-visualization\Grow Pre-Test Questionnaire.csv")
+post = pd.read_csv("C:\\Users\jthru\Documents\Semester 5\Advanced Web Development\data-visualization\Grow Post-Test Questionnaire.csv")
+test = pd.read_csv("C:\\Users\jthru\Documents\Semester 5\Advanced Web Development\data-visualization\Task Times.csv")
 
 # Converting columns stored as strings to ints
 for column in ["What is your current relationship with social media like?","I would like to improve my relationship with social media.","What is your opinion on self-help apps?","How likely are you to use a self-help app?"]:
@@ -127,5 +127,9 @@ plt.show()
 
 # Scatter Plot
 colors = np.array(range(0,350,10))
-check = plt.scatter(post[easeCols], test[tasks], c=colors, cmap='viridis')
+plt.scatter(post[easeCols], test[tasks], c=colors, cmap='viridis')
+# Labeling the axes, giving the chart a name, and showing the chart
+plt.xlabel("Task Usability Rating")
+plt.ylabel("Time to Complete Task in Seconds")
+plt.title("Task Time and Usability Rating Scatter Plot")
 plt.show()
